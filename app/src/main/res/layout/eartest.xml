@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <TextView
+        android:id="@+id/ear"
+        android:layout_width="302dp"
+        android:layout_height="54dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:text="Test is currently Running in\nLEFT Ear"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ear"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-35dp"
+        android:textColor="@android:color/black"
+        android:text="Test- 1" />
+
+    <TextView
+        android:id="@+id/intensity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/test"
+        android:layout_marginBottom="-45dp"
+        android:textColor="@android:color/black"
+        android:text="Intensity : 80dp" />
+    <TextView
+        android:id="@+id/frequency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignBottom="@id/intensity"
+        android:layout_marginBottom="-35dp"
+        android:textColor="@android:color/black"
+        android:text="Frequency : 100HZ" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/audible"
+        android:layout_width="254dp"
+        android:layout_height="160dp"
+
+        android:layout_alignBottom="@id/frequency"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-177dp"
+        app:cardBackgroundColor="@color/cardcolor">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="-50dp"
+            android:text="Is it Audible?"
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="68dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="80dp"
+            android:background="#28388C"
+            android:text="YES"
+            android:textAlignment="center"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="68dp"
+            android:layout_height="34dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="80dp"
+            android:background="#7FC9DC"
+            android:text="NO"
+            android:textAlignment="center" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignBottom="@id/audible"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="-72dp"
+        android:layout_centerHorizontal="true"
+        android:width="196dp"
+        android:height="58dp"
+        android:background="@color/start"
+        android:text="STOP"
+        android:textColor="@android:color/white"
+        android:textSize="25sp" />
+
+</RelativeLayout>
