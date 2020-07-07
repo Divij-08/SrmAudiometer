@@ -18,7 +18,7 @@
         android:textSize="25sp" />
 
     <Button
-        android:id="@+id/start"
+        android:id="@+id/stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/useearphones"
