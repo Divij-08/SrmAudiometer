@@ -26,7 +26,7 @@
         android:width="196dp"
         android:height="58dp"
         android:background="@color/start"
-       android:layout_centerHorizontal="true"
+        android:layout_centerHorizontal="true"
         android:text="START"
         android:textColor="@android:color/white"
         android:textSize="25sp" />
