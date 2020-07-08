@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:id="@+id/Heading"
+       android:text="DETAILS OF THE PATIENT"
+       android:textSize="35sp"
+       android:textColor="#000000"
+       android:gravity="center"
+       android:padding="25dp"
+       android:textStyle="bold">
+
+   </TextView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:paddingRight="45dp"
+    android:paddingLeft="45dp"
+    android:layout_gravity="center"
+    android:paddingTop="80dp">
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:layout_gravity="center"
+       android:paddingLeft="45dp"
+       android:paddingRight="45dp">
+      <TextView
+          android:id="@+id/name"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Name: "
+          android:layout_gravity="center"
+          android:textSize="25sp"
+          android:gravity="center"
+         android:textColor="#000000">
+
+      </TextView>
+      <EditText
+          android:id="@+id/Input_name"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:hint="Patient's Name"
+          android:layout_gravity="center">
+
+      </EditText>
+
+
+
+   </LinearLayout>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:layout_gravity="center"
+       android:padding="45dp">
+      <TextView
+          android:id="@+id/age"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Age: "
+          android:layout_gravity="center"
+          android:textSize="25sp"
+          android:gravity="center"
+          android:textColor="#000000">
+
+      </TextView>
+      <Spinner
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/spinner">
+
+      </Spinner>
+
+
+
+
+   </LinearLayout>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:layout_gravity="center"
+       android:paddingLeft="45dp">
+      <TextView
+          android:id="@+id/gender"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Gender: "
+          android:layout_gravity="center"
+          android:textSize="25sp"
+          android:gravity="center"
+          android:textColor="#000000">
+
+      </TextView>
+     <RadioGroup
+         android:id="@+id/sex"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Male"
+            android:textSize="25sp">
+
+        </RadioButton>
+        <RadioButton
+            android:id="@+id/female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:textSize="25sp">
+
+        </RadioButton>
+     </RadioGroup>
+
+
+
+
+   </LinearLayout>
+
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="183dp"
+       android:gravity="bottom"
+       android:paddingTop="60dp">
+
+
+      <Button
+          android:layout_width="147dp"
+          android:layout_height="wrap_content"
+          android:text="NEXT"
+          android:textSize="25sp"
+          android:textColor="#ffffff"
+          android:background="#7FC9DC"
+          android:id="@+id/Next">
+
+      </Button>
+
+   </LinearLayout>
+</LinearLayout>
+
+
+
+</LinearLayout>
