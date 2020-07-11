@@ -5,8 +5,11 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">#356A9A</item>
         <item name="colorPrimaryDark">#142162</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">#356A9A</item>
 
     </style>
-
+    <style name="DialogAnimation">
+    <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
+    <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
 </resources>

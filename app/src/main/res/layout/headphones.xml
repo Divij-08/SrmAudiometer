@@ -11,7 +11,7 @@
         android:layout_alignBottom="@id/headphones"
 
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="-59dp"
+        android:layout_marginBottom="-177dp"
         android:text="Please Use Earphones"
         android:textAlignment="center"
         android:textColor="@android:color/black"
@@ -22,22 +22,47 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@id/useearphones"
-        android:layout_marginBottom="-87dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-100dp"
         android:width="196dp"
         android:height="58dp"
         android:background="@color/start"
-        android:layout_centerHorizontal="true"
         android:text="START"
         android:textColor="@android:color/white"
         android:textSize="25sp" />
 
+
     <ImageView
+        android:id="@+id/headphonesi"
+        android:layout_width="259dp"
+        android:layout_height="166dp"
+        android:layout_alignBottom="@id/headphones"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="-110dp"
+
+        app:srcCompat="@drawable/ic_headphon" />
+
+    <androidx.cardview.widget.CardView
         android:id="@+id/headphones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        app:srcCompat="@drawable/headphones" />
+        app:cardCornerRadius="15dp"
+        app:cardBackgroundColor="@color/cardcolor">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:text="There will be Two tests :\n 1.left ear 2.right ear.\n If sound is Audible press yes\n if not than press no."
+            android:textAlignment="center"
+            android:textColor="@android:color/black"
+            android:textSize="25sp" />
+
+    </androidx.cardview.widget.CardView>
 
 
 </RelativeLayout>

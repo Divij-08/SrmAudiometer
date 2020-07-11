@@ -1,6 +1,8 @@
 package com.mj.srmaudiometer;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
@@ -9,16 +11,17 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 
 
 public class Eartest extends AppCompatActivity {
-public  static  int count=0;
 int start;
-int intensity=10,frequency=250,j=0;
+int intensity=10,frequency=250,j=0,count=0;
 public  static int[] thresholdl=new int[6];
 public static int[] thresholdr=new int[6];
+public static int[] threshold=new int[12];
 Button yes,no,stop;
 TextView in,fre,ear,test;
 MediaPlayer mpno,mpyes;
@@ -36,14 +39,6 @@ boolean x=false;
         in=findViewById(R.id.intensity);
         fre=findViewById(R.id.frequency);
         stop=findViewById(R.id.stop);
-
-         if(count==1)
-         {
-              ear.setText("Test is currently Running in\nRight Ear");
-              test.setText("Test- 2");
-
-         }
-         count++;
          stop.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View v) {
@@ -70,37 +65,50 @@ no.setOnClickListener(new View.OnClickListener() {
         mpno.start();
         if(x)
         {
+            threshold[j]=intensity+2;
+            j++;
+            x=false;
             frequency=frequency*2;
             intensity=10;
             if(frequency==16000)
             {
+               count++;
+                if(count==1)
+                {
+                    AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(Eartest.this);
+                    View layoutView = getLayoutInflater().inflate(R.layout.dialog_postive_layout, null);
+                    Button dialogButton = layoutView.findViewById(R.id.btnDialog);
+                    dialogBuilder.setView(layoutView);
+                 final AlertDialog   alertDialog = dialogBuilder.create();
+                    alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
 
+                    alertDialog.show();
+                    dialogButton.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            alertDialog.dismiss();
+                        }
+                    });
+
+                    ear.setText("Test is currently Running in\nRight Ear");
+                    test.setText("Test- 2");
+                    frequency=250;
+                }else
                 if(count==2)
                 {
                     Intent graphintent=new Intent(Eartest.this,GraphActivity.class);
-                    graphintent.putExtra("thresholdl",thresholdl);
-                    graphintent.putExtra("thresholdr",thresholdr);
+                    graphintent.putExtra("threshold",threshold);
                     startActivity(graphintent);
-                    //pass rightl
+
 
                 }
-                else if(count==1)
-                {
 
-
-                    Intent instructions=new Intent(getApplicationContext(), com.mj.srmaudiometer.instructions.class);
-                    startActivity(instructions);
-                }
 
             }
             fre.setText("Frequency : "+frequency+"HZ");
             in.setText("Intensity : " + intensity + "DB");
-            if(count==1)
-            {thresholdl[j]=intensity;}
-            if(count==2)
-            {thresholdr[j]=intensity;}
-            j++;
-            x=false;
+
+
 
         }
         else {
